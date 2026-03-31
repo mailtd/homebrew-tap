@@ -5,35 +5,43 @@
 class Mailcx < Formula
   desc "CLI for Mail.cx — Email Testing Platform & API for Developers"
   homepage "https://mail.cx"
-  version "1.1.0"
+  version "1.2.0"
   license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.1.0/mailcx_1.1.0_darwin_amd64.tar.gz"
-      sha256 "9ba22d2ee58a14d3c53c10dfd39330ab2e0abb3a9aa232ecefcadeb637770cb7"
-    end
+    if Hardware::CPU.intel?
+      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.2.0/mailcx_1.2.0_darwin_amd64.tar.gz"
+      sha256 "4170bff2e1c42a0b1e3fa3f2bcc0bdade851cc5a8dfa996a6b4e06059a4fdeaf"
 
-    on_arm do
-      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.1.0/mailcx_1.1.0_darwin_arm64.tar.gz"
-      sha256 "0a3d959aada8a0838b42d1761aacfeabae38524afd4571467382905e1e999740"
+      define_method(:install) do
+        bin.install "mailcx"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.2.0/mailcx_1.2.0_darwin_arm64.tar.gz"
+      sha256 "ae528c3c60f633e0d2fb134db7d8f16cac6f4ab7515d4776d26b476d8938b9f8"
+
+      define_method(:install) do
+        bin.install "mailcx"
+      end
     end
   end
 
   on_linux do
-    on_intel do
-      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.1.0/mailcx_1.1.0_linux_amd64.tar.gz"
-      sha256 "8688aac52ce27b340338c959fb40624af62d3ec160bd0066c650b8b0448411af"
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.2.0/mailcx_1.2.0_linux_amd64.tar.gz"
+      sha256 "1f3fccd83d7601a9a428ee172d99e16d0056466cf886d99bf6a8664a3f81e77b"
+      define_method(:install) do
+        bin.install "mailcx"
+      end
     end
-
-    on_arm do
-      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.1.0/mailcx_1.1.0_linux_arm64.tar.gz"
-      sha256 "41a5cca466b1dd66336285312f0dcf34406f2d954bbd36293c3678f90f8d7b4d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.2.0/mailcx_1.2.0_linux_arm64.tar.gz"
+      sha256 "a61cf2c7487bf09e846d241b3f8bc832feb35caa725cf606e37fca645f103b2e"
+      define_method(:install) do
+        bin.install "mailcx"
+      end
     end
-  end
-
-  def install
-    bin.install "mailcx"
   end
 
   test do
