@@ -5,21 +5,21 @@
 class Mailcx < Formula
   desc "CLI for Mail.cx — Email Testing Platform & API for Developers"
   homepage "https://mail.cx"
-  version "1.2.0"
+  version "1.2.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.2.0/mailcx_1.2.0_darwin_amd64.tar.gz"
-      sha256 "4170bff2e1c42a0b1e3fa3f2bcc0bdade851cc5a8dfa996a6b4e06059a4fdeaf"
+      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.2.1/mailcx_1.2.1_darwin_amd64.tar.gz"
+      sha256 "18ffb8a6c59fb52167c2fbd304e218c6741fedd6fde74c82ffb5228b6e50f09d"
 
       define_method(:install) do
         bin.install "mailcx"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.2.0/mailcx_1.2.0_darwin_arm64.tar.gz"
-      sha256 "ae528c3c60f633e0d2fb134db7d8f16cac6f4ab7515d4776d26b476d8938b9f8"
+      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.2.1/mailcx_1.2.1_darwin_arm64.tar.gz"
+      sha256 "3c4456e90f7deaa8a959ddab45097c334110938eb3414048f3d29b21cfe03896"
 
       define_method(:install) do
         bin.install "mailcx"
@@ -29,15 +29,15 @@ class Mailcx < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.2.0/mailcx_1.2.0_linux_amd64.tar.gz"
-      sha256 "1f3fccd83d7601a9a428ee172d99e16d0056466cf886d99bf6a8664a3f81e77b"
+      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.2.1/mailcx_1.2.1_linux_amd64.tar.gz"
+      sha256 "47b670d10fe943769e90ee06cc28cff9239d353200dcc2e6ffcfe89c33128348"
       define_method(:install) do
         bin.install "mailcx"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.2.0/mailcx_1.2.0_linux_arm64.tar.gz"
-      sha256 "a61cf2c7487bf09e846d241b3f8bc832feb35caa725cf606e37fca645f103b2e"
+      url "https://github.com/mailtd/mailcx-cli/releases/download/v1.2.1/mailcx_1.2.1_linux_arm64.tar.gz"
+      sha256 "36c82d66d9ddc8aa7db4e401919b6ba52a4842057818b92996d912ee2b0c6a22"
       define_method(:install) do
         bin.install "mailcx"
       end
