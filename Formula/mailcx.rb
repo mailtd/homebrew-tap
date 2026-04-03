@@ -4,7 +4,7 @@
 # mailcx has been renamed to mailtd.
 # This formula exists for backward compatibility.
 class Mailcx < Formula
-  desc "CLI for Mail.td (renamed from mailcx → mailtd)"
+  desc "CLI for Mail.td — Developer Email Platform"
   homepage "https://mail.td"
   version "1.2.1"
   license "MIT"
@@ -17,9 +17,7 @@ class Mailcx < Formula
 
   def caveats
     <<~EOS
-      mailcx has been renamed to mailtd.
       Please use: brew install mailtd/tap/mailtd
-      Then run: mailtd (instead of mailcx)
     EOS
   end
 end
