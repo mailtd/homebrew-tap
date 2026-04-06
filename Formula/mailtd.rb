@@ -5,21 +5,21 @@
 class Mailtd < Formula
   desc "CLI for Mail.td — Developer Email Testing Platform & API"
   homepage "https://mail.td"
-  version "1.1.0"
+  version "1.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mailtd/mailtd-cli/releases/download/v1.1.0/mailtd_1.1.0_darwin_amd64.tar.gz"
-      sha256 "3e1a8c1474dbef00e119955d374ac3e01462d113f9a275c663b320873b049c71"
+      url "https://github.com/mailtd/mailtd-cli/releases/download/v1.2.0/mailtd_1.2.0_darwin_amd64.tar.gz"
+      sha256 "09d10415b581231cf0721bea359babe7712b14479066be53c074916bb9e310e1"
 
       define_method(:install) do
         bin.install "mailtd"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mailtd/mailtd-cli/releases/download/v1.1.0/mailtd_1.1.0_darwin_arm64.tar.gz"
-      sha256 "052ad496656a4d211d5146b33acc94bf10a030dc28c7a42103fd55993e64e16d"
+      url "https://github.com/mailtd/mailtd-cli/releases/download/v1.2.0/mailtd_1.2.0_darwin_arm64.tar.gz"
+      sha256 "eb9fe85bbb69c41d0bce2cae8b325ae2e1f2529f75c0eff62e1d086b179c79e4"
 
       define_method(:install) do
         bin.install "mailtd"
@@ -29,15 +29,15 @@ class Mailtd < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mailtd/mailtd-cli/releases/download/v1.1.0/mailtd_1.1.0_linux_amd64.tar.gz"
-      sha256 "19b9536b92dfce824b283551019a3463f703cf8c730937d12416aa7951f39d6d"
+      url "https://github.com/mailtd/mailtd-cli/releases/download/v1.2.0/mailtd_1.2.0_linux_amd64.tar.gz"
+      sha256 "784df1a020027f124b0eeef90d1576986a4c9658db6127e3c3afc6cf5abc8bbb"
       define_method(:install) do
         bin.install "mailtd"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mailtd/mailtd-cli/releases/download/v1.1.0/mailtd_1.1.0_linux_arm64.tar.gz"
-      sha256 "9ac4b199ac30de72de0fa8d2827545a665b747d93ec3ad6ca4f27e21235a9a4c"
+      url "https://github.com/mailtd/mailtd-cli/releases/download/v1.2.0/mailtd_1.2.0_linux_arm64.tar.gz"
+      sha256 "00f63129c5373c2d10b56af1f898eaa7c334893b75771135e64b82f0c2196dfc"
       define_method(:install) do
         bin.install "mailtd"
       end
